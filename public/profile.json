@@ -1,0 +1,12 @@
+{
+    "name": "Aldhair Vera Camacho",
+    "description": "Game Developer and Front-End Developer that is working on evolve to a Full-Stack Developer MERN based",
+    "profile_img": "https://avatars.githubusercontent.com/u/16431855?s=400",
+    "learning": [
+        {"id":0,"value":"Scrum"},
+        {"id":1,"value":"ReactJS Skills in a great level"},
+        {"id":2,"value":"How NodeJS works"}
+    ],
+    "email": "aldhairvera15@gmail.com",
+    "github": "https://github.com/BurningAl15"
+}
