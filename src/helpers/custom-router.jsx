@@ -3,6 +3,7 @@ import Home from '../pages/Home';
 import About from '../pages/About';
 import ProductDetailByID from '../pages/ProductDetailByID';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 function CustomRouter() {
   return (
@@ -13,6 +14,7 @@ function CustomRouter() {
         <Route path="product-detail/:id" element={<ProductDetailByID />} />
         <Route path="/about" element={<About />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
