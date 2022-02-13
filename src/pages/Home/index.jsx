@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
 import useProductDetails from '../../hooks/useProductDetails';
 import { PageContainer, FetchDataContainer } from '../styles/style';
