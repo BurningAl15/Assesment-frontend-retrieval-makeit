@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from 'react';
 import PlaceholderData from '../../components/PlaceholderData';
 import useProfileData from '../../hooks/useProfileData';
