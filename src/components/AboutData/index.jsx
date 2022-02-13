@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import { useContext } from 'react';
 import { FaGithub } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 import {
@@ -11,11 +12,13 @@ import {
   Li,
   SocialLink
 } from './style';
+import { ThemeContext } from '../../hooks/ThemeContext';
 
 function AboutData(props) {
   const { data } = props;
+  const { theme } = useContext(ThemeContext);
   return (
-    <AboutContainer>
+    <AboutContainer className={theme}>
       <Name>{data.name}</Name>
       <Description>{data.description}</Description>
       <Image src={data.profile_img} alt="" />
@@ -30,10 +33,10 @@ function AboutData(props) {
         })}
       </Ul>
       <SocialMediaContainer>
-        <SocialLink href={`mailto:${data.email}`}>
+        <SocialLink className={theme} href={`mailto:${data.email}`}>
           <MdEmail />
         </SocialLink>
-        <SocialLink href={data.github}>
+        <SocialLink className={theme} href={data.github}>
           <FaGithub />
         </SocialLink>
       </SocialMediaContainer>

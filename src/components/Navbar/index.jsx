@@ -1,5 +1,8 @@
 /* eslint-disable import/extensions */
-import { Nav, NavUL, NavLI, NavLink } from './style.jsx';
+import { useContext } from 'react';
+import { RiLightbulbFill, RiLightbulbFlashFill } from 'react-icons/ri';
+import { Nav, NavUL, NavLI, NavLink, ThemeButton } from './style.jsx';
+import { ThemeContext } from '../../hooks/ThemeContext';
 
 const options = [
   { id: 0, value: 'Home', url: '/' },
@@ -8,12 +11,19 @@ const options = [
 ];
 
 function Navbar() {
+  const { theme, changeTheme } = useContext(ThemeContext);
+
   return (
-    <Nav>
+    <Nav className={theme}>
+      <ThemeButton className={theme} onClick={() => changeTheme()}>
+        {theme === 'dark' ? <RiLightbulbFill /> : <RiLightbulbFlashFill />}
+      </ThemeButton>
       <NavUL>
         {options.map((option) => (
           <NavLI key={option.id}>
-            <NavLink to={option.url}>{option.value}</NavLink>
+            <NavLink className={theme} to={option.url}>
+              {option.value}
+            </NavLink>
           </NavLI>
         ))}
       </NavUL>

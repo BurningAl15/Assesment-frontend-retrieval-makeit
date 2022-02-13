@@ -6,7 +6,14 @@ export const AboutContainer = styled.div`
   margin: 10px auto 0 auto;
   /* background: coral; */
   border-radius: 10px;
-  border: 2px solid rgba(0, 0, 0, 0.3);
+  &.light {
+    box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(0, 0, 0, 0.3);
+  }
+  &.dark {
+    box-shadow: 0px 2px 10px 0 rgba(255, 255, 255, 0.582);
+    border: 2px solid rgba(255, 255, 255, 0.582);
+  }
 `;
 
 export const Name = styled.p`
@@ -26,13 +33,19 @@ export const Image = styled.img`
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+  &.light {
+    box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.3);
+  }
+  &.dark {
+    box-shadow: 0px 2px 10px 0 rgba(255, 255, 255, 0.582);
+  }
+
+  /* box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2); */
 `;
 
 export const Ul = styled.ul`
   display: flex;
   flex-direction: column;
-  /* color: white; */
   margin-bottom: 20px;
 `;
 
@@ -40,8 +53,6 @@ export const Li = styled.li`
   margin-top: 5px;
   list-style: none;
   font-size: 16px;
-  /* width: 200px; */
-  /* margin: 0 auto; */
 `;
 
 export const SocialMediaContainer = styled.div`
@@ -58,14 +69,32 @@ export const SocialLink = styled.a`
   svg {
     width: 30px;
     height: 30px;
-    /* color: #ffffff; */
-    color: black;
     transition: all 0.2s ease;
   }
+
+  &.light {
+    svg {
+      fill: #222222;
+      filter: drop-shadow(0px 0px 2px rgba(34, 34, 34, 0.72));
+    }
+  }
+  &.dark {
+    svg {
+      fill: #ffffff;
+      filter: drop-shadow(0px 0px 2px rgba(204, 204, 204, 0.72));
+    }
+  }
+
   &:hover {
     svg {
       padding-bottom: 10px;
       border-bottom: 2.5px solid black;
+      &.light {
+        border-bottom: 2.5px solid rgba(0, 0, 0, 0.3);
+      }
+      &.dark {
+        border-bottom: 2.5px solid rgba(255, 255, 255, 0.582);
+      }
     }
   }
 `;

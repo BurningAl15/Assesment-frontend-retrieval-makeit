@@ -1,5 +1,17 @@
 import styled from 'styled-components';
 
+export const AppContainer = styled.div`
+  text-align: center;
+  &.light {
+    background-color: #ffffff;
+    color: #222222;
+  }
+  &.dark {
+    background-color: #222222;
+    color: #ffffff;
+  }
+`;
+
 export const PageContainer = styled.div`
   max-width: calc(100% - 40px);
   padding: 20px;
@@ -17,6 +29,21 @@ export const BackButton = styled.button`
   svg {
     width: 30px;
     height: 30px;
+    transition: all 0.2s ease;
+    &:hover {
+      width: 35px;
+      height: 35px;
+    }
+  }
+  &.light {
+    svg {
+      fill: #222222;
+    }
+  }
+  &.dark {
+    svg {
+      fill: #ffffff;
+    }
   }
 `;
 
