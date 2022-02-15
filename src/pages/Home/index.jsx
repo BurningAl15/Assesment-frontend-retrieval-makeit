@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 import useProductDetails from '../../hooks/useProductDetails';
 import { PageContainer, FetchDataContainer } from '../styles/style';
 import ProductCard from '../../components/ProductCard';
@@ -25,17 +26,24 @@ function Home() {
 
   return (
     <PageContainer>
-      <h2>Home</h2>
-      <FetchDataContainer>
-        {!isLoading &&
-          data.map((value) => {
-            return <ProductCard key={value.id} data={value} />;
-          })}
-        {isLoading &&
-          placeholderLoad.map((value) => {
-            return <PlaceholderDetail key={value.id} />;
-          })}
-      </FetchDataContainer>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 1 }}
+      >
+        <h2>Home</h2>
+        <FetchDataContainer>
+          {!isLoading &&
+            data.map((value) => {
+              return <ProductCard key={value.id} data={value} />;
+            })}
+          {isLoading &&
+            placeholderLoad.map((value) => {
+              return <PlaceholderDetail key={value.id} />;
+            })}
+        </FetchDataContainer>
+      </motion.div>
     </PageContainer>
   );
 }

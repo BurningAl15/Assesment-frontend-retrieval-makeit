@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from 'react';
+import { motion } from 'framer-motion';
 import PlaceholderData from '../../components/PlaceholderData';
 import useProfileData from '../../hooks/useProfileData';
 import { PageContainer } from '../styles/style';
@@ -15,9 +16,16 @@ function About() {
 
   return (
     <PageContainer>
-      <h2>About</h2>
-      {isLoading && <PlaceholderData />}
-      {!isLoading && <AboutData data={data} />}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 1 }}
+      >
+        <h2>About</h2>
+        {isLoading && <PlaceholderData />}
+        {!isLoading && <AboutData data={data} />}
+      </motion.div>
     </PageContainer>
   );
 }
