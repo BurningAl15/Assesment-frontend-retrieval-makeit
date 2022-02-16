@@ -36,7 +36,14 @@ function Home() {
         <FetchDataContainer>
           {!isLoading &&
             data.map((value) => {
-              return <ProductCard key={value.id} data={value} />;
+              return (
+                <ProductCard
+                  key={value.id}
+                  minutes={(value.id - 2) % 3 === 0 ? 3 : 1}
+                  id={value.id}
+                  data={value}
+                />
+              );
             })}
           {isLoading &&
             placeholderLoad.map((value) => {

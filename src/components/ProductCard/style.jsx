@@ -10,7 +10,6 @@ export const ProductDetailContainer = styled.div`
   margin: 20px;
   flex-grow: 1;
   align-items: stretch;
-  /* border: 2px solid rgba(0, 0, 0, 0.3); */
   &.light {
     border: 2px solid rgba(0, 0, 0, 0.3);
     box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.3);
@@ -43,4 +42,9 @@ export const ButtonInteraction = styled.button`
   border-radius: 10px;
   font-weight: bold;
   cursor: pointer;
+
+  &.disabled {
+    background: gray;
+    cursor: text;
+  }
 `;
